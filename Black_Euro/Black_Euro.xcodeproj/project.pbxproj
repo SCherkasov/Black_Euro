@@ -13,6 +13,9 @@
 		8A7ABCB720AA169D00C31AE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7ABCB520AA169D00C31AE7 /* LaunchScreen.storyboard */; };
 		8A7ABCBF20AA195400C31AE7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7ABCBE20AA195400C31AE7 /* SignInViewController.swift */; };
 		8A7ABCC120AA197C00C31AE7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7ABCC020AA197C00C31AE7 /* SignUpViewController.swift */; };
+		8AE17DCF20B0356500C57C8C /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE17DCE20B0356500C57C8C /* CollectionViewController.swift */; };
+		8AE17DD220B0531F00C57C8C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE17DD020B0531F00C57C8C /* CollectionViewCell.swift */; };
+		8AE17DD320B0531F00C57C8C /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE17DD120B0531F00C57C8C /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		8A7ABCB820AA169D00C31AE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A7ABCBE20AA195400C31AE7 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		8A7ABCC020AA197C00C31AE7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8AE17DCE20B0356500C57C8C /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		8AE17DD020B0531F00C57C8C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		8AE17DD120B0531F00C57C8C /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				8A7ABCBE20AA195400C31AE7 /* SignInViewController.swift */,
 				8A7ABCC020AA197C00C31AE7 /* SignUpViewController.swift */,
 				8A7ABCB020AA169B00C31AE7 /* Main.storyboard */,
+				8AE17DCE20B0356500C57C8C /* CollectionViewController.swift */,
+				8AE17DD020B0531F00C57C8C /* CollectionViewCell.swift */,
+				8AE17DD120B0531F00C57C8C /* CollectionViewCell.xib */,
 				8A7ABCB320AA169D00C31AE7 /* Assets.xcassets */,
 				8A7ABCB520AA169D00C31AE7 /* LaunchScreen.storyboard */,
 				8A7ABCB820AA169D00C31AE7 /* Info.plist */,
@@ -127,6 +136,7 @@
 			files = (
 				8A7ABCB720AA169D00C31AE7 /* LaunchScreen.storyboard in Resources */,
 				8A7ABCB420AA169D00C31AE7 /* Assets.xcassets in Resources */,
+				8AE17DD320B0531F00C57C8C /* CollectionViewCell.xib in Resources */,
 				8A7ABCB220AA169B00C31AE7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +148,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE17DD220B0531F00C57C8C /* CollectionViewCell.swift in Sources */,
 				8A7ABCC120AA197C00C31AE7 /* SignUpViewController.swift in Sources */,
 				8A7ABCBF20AA195400C31AE7 /* SignInViewController.swift in Sources */,
 				8A7ABCAD20AA169B00C31AE7 /* AppDelegate.swift in Sources */,
+				8AE17DCF20B0356500C57C8C /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
