@@ -15,32 +15,48 @@ class CollectionViewController: UICollectionViewController {
     
     var reuseIdentifier = "CollectionViewCell"
     
-  
-    
-   
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView!.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        
+        self.collectionView?.register(
+            CollectionViewCell.self,
+            forCellWithReuseIdentifier: self.reuseIdentifier
+        )
     }
 
     // MARK: UICollectionViewDataSource
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
- 
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int
+    {
         return 8
     }
+    
+    override func numberOfSections(in: UICollectionView) -> Int {
+        return 1
+    }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: reuseIdentifier,
+            for: indexPath) as! CollectionViewCell
+ 
+        cell.frontImageName = "1"
+        cell.backImageName = "2"
         
         return cell
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    override func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath)
+    {
         let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
         
         cell.flipCardAnimation(indexPath: indexPath)
     }
-    
-    
 }

@@ -15,18 +15,58 @@ class CollectionViewCell: UICollectionViewCell {
     let cardBackTag = 0
     let cardFrontTag = 1
     
-    var cardViews: (frontView: UIImageView, backView: UIImageView)?
+    public var frontImageName: String? {
+        didSet {
+            if let name = self.frontImageName {
+                let imageView
+                    = self.createCardWithImage(
+                        imageName: name,
+                        tag: self.cardFrontTag
+                )
+                
+                self.frontImageView = imageView
+                
+                self.add(imageView: imageView, isFrontCard: true)
+            }
+        }
+    }
     
-    var imgViewFront: UIImageView!
-    var imgViewBack: UIImageView!
+    public var backImageName: String? {
+        didSet {
+            if let name = self.backImageName {
+                let imageView
+                    = self.createCardWithImage(
+                        imageName: name,
+                        tag: self.cardBackTag
+                )
+                
+                self.backImageView = imageView
+                
+                self.add(imageView: imageView, isFrontCard: false)
+            }
+        }
+    }
     
+    private var frontImageView: UIImageView?
+    private var backImageView: UIImageView?
+    private var isFrontCardShown = false
+    
+    func add(imageView: UIImageView, isFrontCard: Bool) {
+        _ = self.contentView.subviews.map { $0.removeFromSuperview() }
+        
+        self.contentView.addSubview(imageView)
+        
+        self.isFrontCardShown = isFrontCard
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        imgViewFront = self.createCardWithImage(imageName: "1", tag: self.cardFrontTag)
-        imgViewBack = self.createCardWithImage(imageName: "2", tag: self.cardBackTag)
-        cardViews = (frontView: imgViewFront, backView: imgViewBack)
-        contentView.addSubview(imgViewBack)
+        
+        if let imageView = self.backImageView {
+            self.add(imageView: imageView, isFrontCard: false)
+        }
     }
+    
     private func createCardWithImage(imageName: String, tag: Int) -> UIImageView {
         let newCardImageView = UIImageView(frame: self.frame)
         newCardImageView.image = UIImage(named: imageName)
@@ -37,23 +77,21 @@ class CollectionViewCell: UICollectionViewCell {
     
     func flipCardAnimation(indexPath: IndexPath) {
         
-        if (imgViewBack.superview != nil) {
-            cardViews = (frontView: imgViewFront, backView: imgViewBack)
-        }else{
-            cardViews = (frontView: imgViewBack, backView: imgViewFront)
+        if let frontImageView = self.frontImageView,
+            let backImageView = self.backImageView
+        {
+            let toImageView = self.isFrontCardShown ? backImageView : frontImageView
+    
+            UIView.transition(
+                with: self.contentView,
+                duration: 1.0,
+                options: UIViewAnimationOptions.transitionFlipFromLeft,
+                animations: {
+                    self.add(imageView: toImageView, isFrontCard: !self.isFrontCardShown)
+                }, completion: { finished in
+                    print(indexPath)
+                }
+            )
         }
-        
-        let transitionOptions = UIViewAnimationOptions.transitionFlipFromLeft
-        
-        UIView.transition(with: self.contentView, duration: 1.0, options: transitionOptions, animations: {
-            
-            self.cardViews!.backView.removeFromSuperview()
-            
-            self.contentView.addSubview(self.cardViews!.frontView)
-            
-        }, completion: { finished in
-            print(indexPath)
-        })
-        
     }
 }
