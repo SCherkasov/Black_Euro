@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100C0053069D71FE0C5D35D5 /* Pods_Black_Euro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4391AC6EB453773567A9DCE3 /* Pods_Black_Euro.framework */; };
+		8A39FD1320CF1D10001EDF25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A39FD1220CF1D10001EDF25 /* GoogleService-Info.plist */; };
 		8A7ABCAD20AA169B00C31AE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7ABCAC20AA169B00C31AE7 /* AppDelegate.swift */; };
 		8A7ABCB220AA169B00C31AE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A7ABCB020AA169B00C31AE7 /* Main.storyboard */; };
 		8A7ABCB420AA169D00C31AE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A7ABCB320AA169D00C31AE7 /* Assets.xcassets */; };
@@ -19,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F2E7C6758FE5346A1CA15C7 /* Pods-Black_Euro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Black_Euro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Black_Euro/Pods-Black_Euro.debug.xcconfig"; sourceTree = "<group>"; };
+		4391AC6EB453773567A9DCE3 /* Pods_Black_Euro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Black_Euro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60FBD8CBA8C31563A4F25B96 /* Pods-Black_Euro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Black_Euro.release.xcconfig"; path = "Pods/Target Support Files/Pods-Black_Euro/Pods-Black_Euro.release.xcconfig"; sourceTree = "<group>"; };
+		8A39FD1220CF1D10001EDF25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A7ABCA920AA169B00C31AE7 /* Black_Euro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Black_Euro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A7ABCAC20AA169B00C31AE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A7ABCB120AA169B00C31AE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				100C0053069D71FE0C5D35D5 /* Pods_Black_Euro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25D86BF82D258CB1A1330717 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4391AC6EB453773567A9DCE3 /* Pods_Black_Euro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		805F18AA5EB11C6D90F8EA33 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F2E7C6758FE5346A1CA15C7 /* Pods-Black_Euro.debug.xcconfig */,
+				60FBD8CBA8C31563A4F25B96 /* Pods-Black_Euro.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8A7ABCA020AA169B00C31AE7 = {
 			isa = PBXGroup;
 			children = (
 				8A7ABCAB20AA169B00C31AE7 /* Black_Euro */,
 				8A7ABCAA20AA169B00C31AE7 /* Products */,
+				805F18AA5EB11C6D90F8EA33 /* Pods */,
+				25D86BF82D258CB1A1330717 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +98,7 @@
 				8A7ABCB320AA169D00C31AE7 /* Assets.xcassets */,
 				8A7ABCB520AA169D00C31AE7 /* LaunchScreen.storyboard */,
 				8A7ABCB820AA169D00C31AE7 /* Info.plist */,
+				8A39FD1220CF1D10001EDF25 /* GoogleService-Info.plist */,
 			);
 			path = Black_Euro;
 			sourceTree = "<group>";
@@ -83,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8A7ABCBB20AA169D00C31AE7 /* Build configuration list for PBXNativeTarget "Black_Euro" */;
 			buildPhases = (
+				160D44BC1C63AC8AF17A2864 /* [CP] Check Pods Manifest.lock */,
 				8A7ABCA520AA169B00C31AE7 /* Sources */,
 				8A7ABCA620AA169B00C31AE7 /* Frameworks */,
 				8A7ABCA720AA169B00C31AE7 /* Resources */,
+				71B9DFA3204324DE5C00C3B7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,12 +165,56 @@
 			files = (
 				8A7ABCB720AA169D00C31AE7 /* LaunchScreen.storyboard in Resources */,
 				8A7ABCB420AA169D00C31AE7 /* Assets.xcassets in Resources */,
+				8A39FD1320CF1D10001EDF25 /* GoogleService-Info.plist in Resources */,
 				8AE17DD320B0531F00C57C8C /* CollectionViewCell.xib in Resources */,
 				8A7ABCB220AA169B00C31AE7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		160D44BC1C63AC8AF17A2864 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Black_Euro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71B9DFA3204324DE5C00C3B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Black_Euro/Pods-Black_Euro-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Black_Euro/Pods-Black_Euro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8A7ABCA520AA169B00C31AE7 /* Sources */ = {
@@ -294,11 +367,13 @@
 		};
 		8A7ABCBC20AA169D00C31AE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F2E7C6758FE5346A1CA15C7 /* Pods-Black_Euro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HH9AF9DGX8;
 				INFOPLIST_FILE = Black_Euro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,11 +387,13 @@
 		};
 		8A7ABCBD20AA169D00C31AE7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60FBD8CBA8C31563A4F25B96 /* Pods-Black_Euro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HH9AF9DGX8;
 				INFOPLIST_FILE = Black_Euro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
