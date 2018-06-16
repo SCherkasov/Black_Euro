@@ -7,25 +7,38 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passTextField: UITextField!
+    @IBOutlet weak var incorrectLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        attributedTextField(textField: emailTextField)
-        attributedTextField(textField: passTextField)
-    
+        incorrectLabel.isHidden = true
+        
+        emailTextField.backgroundColor = UIColor.clear
+        emailTextField.textColor = UIColor.white
+        emailTextField.keyboardType = .emailAddress
+        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        
+        passTextField.backgroundColor = UIColor.clear
+        passTextField.textColor = UIColor.white
+        passTextField.keyboardType = .numberPad
+        passTextField.isSecureTextEntry = true
+        passTextField.attributedPlaceholder = NSAttributedString(string: passTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
     }
     
-    func attributedTextField(textField: UITextField) -> UITextField {
-        textField.backgroundColor = UIColor.clear
-        textField.textColor = UIColor.white
-        textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
-        
-        return textField
+    @IBAction func signInButton(_ sender: Any) {
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passTextField.text!) { (user, error) in
+            if user != nil {
+                self.performSegue(withIdentifier: "signInGoodSegue", sender: self)
+            } else {
+                self.incorrectLabel.isHidden = false
+            }
+        }
     }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController {
     
@@ -17,21 +18,24 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        attributedTextField(textField: userNameTextField)
-        attributedTextField(textField: emailTextField)
-        attributedTextField(textField: passTextField)
+        
+        userNameTextField.backgroundColor = UIColor.clear
+        userNameTextField.textColor = UIColor.white
+        userNameTextField.attributedPlaceholder = NSAttributedString(string: userNameTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        
+        emailTextField.backgroundColor = UIColor.clear
+        emailTextField.textColor = UIColor.white
+        emailTextField.keyboardType = .emailAddress
+        emailTextField.attributedPlaceholder = NSAttributedString(string: emailTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+        
+        passTextField.backgroundColor = UIColor.clear
+        passTextField.textColor = UIColor.white
+        passTextField.keyboardType = .numberPad
+        passTextField.attributedPlaceholder = NSAttributedString(string: passTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
     }
 
     @IBAction func dismissOnClick(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-    }
-
-    func attributedTextField(textField: UITextField) -> UITextField {
-        textField.backgroundColor = UIColor.clear
-        textField.textColor = UIColor.white
-        textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
-        
-        return textField
     }
     
     @IBAction func signUpButton(_ sender: Any) {
@@ -39,9 +43,9 @@ class SignUpViewController: UIViewController {
             if let error = error {
                 print(error.localizedDescription)
             }
-            else if let user = user {
-                print("Sign Up Successfully. \(user.additionalUserInfo)")
+            else if user != nil {
+                self.dismiss(animated: false, completion: nil)
             }
         }
-}
+    }
 }

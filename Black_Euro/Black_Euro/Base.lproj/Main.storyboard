@@ -53,6 +53,9 @@
                                         <state key="normal" title="sign in">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VTs-kg-ON5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -65,19 +68,28 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="3Xa-5l-gds" kind="presentation" id="yuc-Uj-mTJ"/>
+                                    <segue destination="3Xa-5l-gds" kind="presentation" identifier="createUser" id="yuc-Uj-mTJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="incorrect login or password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnk-Wl-NyX">
+                                <rect key="frame" x="99" y="190" width="176" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="RSC-Gf-lp0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LK4-5M-nHb"/>
                             <constraint firstItem="ycn-Ok-CDr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MV3-88-7Vo"/>
+                            <constraint firstItem="mnk-Wl-NyX" firstAttribute="top" secondItem="ycn-Ok-CDr" secondAttribute="bottom" constant="58" id="QBz-eG-Ruq"/>
                             <constraint firstItem="RSC-Gf-lp0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rtl-0u-VGb"/>
+                            <constraint firstItem="mnk-Wl-NyX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="99" id="WMD-T3-SDN"/>
                             <constraint firstItem="ycn-Ok-CDr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="br6-96-S8h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X9K-2O-ySZ" secondAttribute="trailing" id="drS-aP-c5L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X9K-2O-ySZ" secondAttribute="bottom" id="hTh-wd-DmM"/>
                             <constraint firstItem="X9K-2O-ySZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sqQ-6t-5om"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mnk-Wl-NyX" secondAttribute="trailing" constant="100" id="tKg-g7-zuw"/>
                             <constraint firstItem="RSC-Gf-lp0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tiZ-hJ-cgV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RSC-Gf-lp0" secondAttribute="trailing" constant="20" id="vpE-zy-b7c"/>
                         </constraints>
@@ -85,7 +97,9 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="cKh-Gb-g4w" id="mga-d4-rjU"/>
+                        <outlet property="incorrectLabel" destination="mnk-Wl-NyX" id="qQe-hY-0r9"/>
                         <outlet property="passTextField" destination="lzn-8x-PXb" id="S5D-jl-EUA"/>
+                        <segue destination="duk-kF-cgJ" kind="presentation" identifier="signInGoodSegue" id="McY-Ad-Isq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

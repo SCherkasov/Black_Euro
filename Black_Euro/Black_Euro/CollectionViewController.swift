@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class CollectionViewController: UICollectionViewController {
 
@@ -22,6 +23,13 @@ class CollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         self.collectionView!.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        if let user = Auth.auth().currentUser {
+//            self.performSegue(withIdentifier: "signInGoodSegue", sender: self)
+//        }
+//    }
 
     // MARK: UICollectionViewDataSource
 
