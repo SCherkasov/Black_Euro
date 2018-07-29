@@ -54,6 +54,5 @@ class CollectionViewCell: UICollectionViewCell {
         }, completion: { finished in
             print(indexPath)
         })
-        
     }
 }

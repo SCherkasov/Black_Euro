@@ -41,4 +41,9 @@ class SignInViewController: UIViewController {
             }
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        emailTextField.resignFirstResponder()
+        passTextField.resignFirstResponder()
+    }
 }

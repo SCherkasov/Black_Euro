@@ -11,14 +11,10 @@ import FirebaseAuth
 
 class CollectionViewController: UICollectionViewController {
 
-    var pict1 = ["1", "2", "3", "4"]
-    var pict2 = ["5", "6", "7", "8"]
-    
+    var pict1 = [["1", "2"], ["3", "4"],["5", "6"], ["7", "8"]]
+
     var reuseIdentifier = "CollectionViewCell"
     
-  
-    
-   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView!.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
@@ -49,6 +45,4 @@ class CollectionViewController: UICollectionViewController {
         
         cell.flipCardAnimation(indexPath: indexPath)
     }
-    
-    
 }

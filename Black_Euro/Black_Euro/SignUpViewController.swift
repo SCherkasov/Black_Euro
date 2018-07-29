@@ -31,6 +31,7 @@ class SignUpViewController: UIViewController {
         passTextField.backgroundColor = UIColor.clear
         passTextField.textColor = UIColor.white
         passTextField.keyboardType = .numberPad
+        passTextField.isSecureTextEntry = true
         passTextField.attributedPlaceholder = NSAttributedString(string: passTextField.placeholder!, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
     }
 
@@ -47,5 +48,11 @@ class SignUpViewController: UIViewController {
                 self.dismiss(animated: false, completion: nil)
             }
         }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        userNameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passTextField.resignFirstResponder()
     }
 }
